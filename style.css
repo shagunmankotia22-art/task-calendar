@@ -1,0 +1,192 @@
+body{
+font-family:'Quicksand',sans-serif;
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:#e8cbd3;
+}
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,192,203,0.25);
+z-index:-1;
+}
+
+
+
+.container{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+position:relative;
+overflow:hidden;
+}
+
+.container::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,255,255,0.7);
+border-radius:20px;
+}
+
+.container *{
+position:relative;
+z-index:1;
+}
+
+h1{
+text-align:center;
+}
+
+.calendar{
+margin-top:20px;
+}
+
+.month{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.weekdays{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+text-align:center;
+font-weight:600;
+margin-top:10px;
+color:#444;
+}
+
+.weekdays div{
+padding:5px 0;
+}
+
+.days{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:10px;
+margin-top:15px;
+}
+
+.day{
+padding:12px;
+border-radius:10px;
+text-align:center;
+cursor:pointer;
+background:#ffe4ec;
+}
+
+.day:hover{
+transform:scale(1.1);
+}
+.today{
+background:#ff8fab;
+color:white;
+font-weight:bold;
+border:2px solid #ff4d6d;
+}
+
+.todo{
+margin-top:25px;
+}
+
+input{
+padding:10px;
+margin:5px;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:8px 14px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+ul{
+list-style:none;
+padding:0;
+}
+
+li{
+background:#ffd6e0;
+margin:5px 0;
+padding:10px;
+border-radius:8px;
+display:flex;
+justify-content:space-between;
+}
+body.pink-theme{
+background-color: #f9f6f7;
+background-size:cover;
+background-position:center;
+}
+
+body.lavender-theme{
+background:#f3f6f2;
+}
+
+body.anime-theme{
+background-color: #fafafe;
+background-size:cover;
+background-position:center;
+}
+
+body.dark-theme{
+background:#f0f0fa;
+/* color:white; */
+}
+/* 🌷 Pink Theme */
+body.pink-theme .container{
+background-image:url("images/floral-bg.jpg");
+background-size:cover;
+background-position:center;
+}
+
+/* 💜 Lavender Theme */
+body.lavender-theme .container{
+background-image:url("images/nature.jpg");
+background-size:cover;
+background-position:center;
+}
+
+/* 🌸 Anime Theme */
+body.anime-theme .container{
+background-image:url("images/anime.jpg");
+background-size:cover;
+background-position:center;
+}
+
+/* 🌙 Dark Theme */
+body.dark-theme .container{
+background-image:url("images/space.jpg");
+background-size:cover;
+background-position:center;
+}
+
+
+
+/* 📱 Responsive */
+
+@media(max-width:600px){
+
+.days{
+grid-template-columns:repeat(4,1fr);
+}
+
+.container{
+padding:15px;
+}
+
+}
